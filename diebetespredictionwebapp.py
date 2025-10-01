@@ -9,7 +9,8 @@ Created on Mon Sep 29 22:37:45 2025
 import numpy as np
 import streamlit as st
 import pickle
-loading_model=pickle.load(open('/Users/saimashaikh/Desktop/deployml/trained_model.sav','rb'))
+with open('trained_model.sav', 'rb') as f:
+    loading_model = pickle.load(f)
 
 def diebetes_prediction(input_data):
     input_data = (5, 166, 72, 19, 175, 25.8, 0.587, 51)
