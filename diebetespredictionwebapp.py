@@ -8,9 +8,11 @@ Created on Mon Sep 29 22:37:45 2025
 
 import numpy as np
 import streamlit as st
-import pickle
-with open('trained_model.sav', 'rb') as f:
-    loading_model = pickle.load(f)
+import joblib
+
+# Save the model
+joblib.dump(model, 'trained_model.sav')
+loading_model = joblib.load('trained_model.sav')
 
 def diebetes_prediction(input_data):
     input_data = (5, 166, 72, 19, 175, 25.8, 0.587, 51)
